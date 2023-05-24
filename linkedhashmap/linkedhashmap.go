@@ -23,7 +23,7 @@ func NewLinkedHashMap() *LinkedHashMap {
 }
 
 // Put inserts a key-value pair into the map.
-func (m *LinkedHashMap) Put(key interface{}, value interface{}) {
+func (m *LinkedHashMap) Insert_into_hashmap(key interface{}, value interface{}) {
 	entry := m.entryMap[key]
 	if entry != nil {
 		entry.value = value
