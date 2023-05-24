@@ -9,21 +9,24 @@ type node struct {
 
 // LinkedHashMap is a hash map with linked list entries to maintain the insertion order.
 type LinkedHashMap struct {
-	head     *node
-	tail     *node
-	size     int
-	entryMap map[interface{}]*node
+	head      *node
+	tail      *node
+	size      int
+	entryMap  map[interface{}]*node
+	tableSize int
 }
 
-// NewLinkedHashMap creates a new instance of LinkedHashMap.
-func NewLinkedHashMap() *LinkedHashMap {
+// NewLinkedHashMap creates a new instance of LinkedHashMap with the specified table size.
+func NewLinkedHashMap(tableSize int) *LinkedHashMap {
+	entryMap := make(map[interface{}]*node, tableSize)
 	return &LinkedHashMap{
-		entryMap: make(map[interface{}]*node),
+		entryMap:  entryMap,
+		tableSize: tableSize,
 	}
 }
 
 // Put inserts a key-value pair into the map.
-func (m *LinkedHashMap) Insert_into_hashmap(key interface{}, value interface{}) {
+func (m *LinkedHashMap) Put(key interface{}, value interface{}) {
 	entry := m.entryMap[key]
 	if entry != nil {
 		entry.value = value
