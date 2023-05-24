@@ -1,4 +1,6 @@
-# hashmapThe first three key-value pairs will be inserted into the map successfully, each with a unique key. The insertion order will be maintained since the map uses a linked list to store the entries.
+# hashmap
+assuming the table size to be 3
+The first three key-value pairs will be inserted into the map successfully, each with a unique key. The insertion order will be maintained since the map uses a linked list to store the entries.
 
 When attempting to insert the fourth key-value pair, the Put method will first check if an entry with the same key already exists in the map. If it does, the value associated with that key will be updated, and the size of the map will remain unchanged.
 
